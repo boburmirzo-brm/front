@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dasturlash, texnologiya va o'z ustida ishlash haqida blog.">
+  <title>Bilim Blogi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Bilim<span>.</span></a>
+      <button class="menu-toggle" aria-label="Menyuni ochish" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="#bosh">Bosh sahifa</a>
+        <a href="#haqida">Haqida</a>
+        <a href="#maqolalar">Maqolalar</a>
+        <a href="#aloqa">Aloqa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="bosh">
+      <div class="container">
+        <p class="hero__tag">Har hafta yangi maqola</p>
+        <h1 class="hero__title">Dasturlash va texnologiya haqida <span>sodda tilda</span></h1>
+        <p class="hero__text">
+          Bu blogda veb-dasturlash, foydali vositalar va o'z ustida ishlash bo'yicha
+          tajribalar bilan o'rtoqlashaman. Murakkab mavzularni oddiy misollar bilan tushuntiraman.
+        </p>
+        <div class="hero__actions">
+          <a href="#maqolalar" class="btn btn--primary">Maqolalarni o'qish</a>
+          <a href="#aloqa" class="btn btn--ghost">Bog'lanish</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Haqida / Mavzular -->
+    <section class="section" id="haqida">
+      <div class="container">
+        <h2 class="section__title">Blog haqida</h2>
+        <p class="section__subtitle">Bu yerda qaysi mavzular yoritiladi</p>
+        <div class="cards">
+          <article class="card">
+            <div class="card__icon">&lt;/&gt;</div>
+            <h3>Veb-dasturlash</h3>
+            <p>HTML, CSS, JavaScript va zamonaviy frontend vositalari bo'yicha amaliy qo'llanmalar.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">⚙</div>
+            <h3>Foydali vositalar</h3>
+            <p>Git, terminal, muharrirlar va ish jarayonini tezlashtiradigan dasturlar haqida.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">↗</div>
+            <h3>O'sish va o'rganish</h3>
+            <p>Mustaqil o'rganish, vaqtni boshqarish va kasbiy rivojlanish bo'yicha maslahatlar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maqolalar -->
+    <section class="section section--alt" id="maqolalar">
+      <div class="container">
+        <h2 class="section__title">So'nggi maqolalar</h2>
+        <p class="section__subtitle">Qidiring yoki mavzu bo'yicha saralang</p>
+
+        <div class="toolbar">
+          <input type="search" id="search" class="input" placeholder="Maqola qidirish...">
+          <div class="filters" id="filters"></div>
+        </div>
+
+        <div class="posts" id="posts"></div>
+        <p class="empty" id="empty" hidden>Hech narsa topilmadi.</p>
+      </div>
+    </section>
+
+    <!-- Aloqa -->
+    <section class="section" id="aloqa">
+      <div class="container container--narrow">
+        <h2 class="section__title">Aloqa</h2>
+        <p class="section__subtitle">Savol yoki taklifingiz bo'lsa, yozib qoldiring</p>
+
+        <form class="form" id="contact-form" novalidate>
+          <div class="form__group">
+            <label for="name">Ismingiz</label>
+            <input type="text" id="name" name="name" class="input" placeholder="Ism">
+            <small class="form__error"></small>
+          </div>
+          <div class="form__group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="input" placeholder="siz@example.com">
+            <small class="form__error"></small>
+          </div>
+          <div class="form__group">
+            <label for="message">Xabar</label>
+            <textarea id="message" name="message" class="input" rows="5" placeholder="Xabaringiz..."></textarea>
+            <small class="form__error"></small>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Yuborish</button>
+          <p class="form__success" id="form-success" hidden>Rahmat! Xabaringiz qabul qilindi.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Bilim Blogi. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <!-- Maqola oynasi -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" aria-label="Yopish" data-close>&times;</button>
+      <span class="post__tag" id="modal-tag"></span>
+      <h2 id="modal-title"></h2>
+      <p class="post__meta" id="modal-meta"></p>
+      <div class="modal__body" id="modal-body"></div>
+    </article>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
